@@ -21,16 +21,8 @@ Mock数据出来 fastmock
 ## proto 依赖
 
 * `npm install ts-proto`
-* yarn add -D naive-ui
-
-```
--D naive-ui
-```
-
-
-```
--D naive-ui
-```
+* `yarn add -D naive-ui vfonts`
+* `yarn add vue-router@4`
 
 yarn add unplugin-vue-components
 # 安装`pnpm`

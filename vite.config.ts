@@ -8,9 +8,6 @@ export default defineConfig(({ command, mode }) => {
   return {
     // vite 配置
     plugins: [vue()],
-    // define: {
-    //   __APP_ENV__: env.APP_ENV
-    // },
     resolve: {
       alias: {
         '@': '/src',

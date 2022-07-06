@@ -14,7 +14,11 @@
       "esnext",
       "dom"
     ],
+    // 支持 Volar
     "skipLibCheck": true,
+    "types": [
+      "naive-ui/volar"
+    ],
     // basueUrl 和 paths 配合vite.config.ts 的resolve.alias，配置path alias
     "baseUrl": ".",
     "paths": {
@@ -29,6 +33,7 @@
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
+  "exclude": ["node_modules", "dist"],
   "references": [
     {
       "path": "./tsconfig.node.json"
