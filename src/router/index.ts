@@ -8,36 +8,18 @@ const RootRoute: RouteRecordRaw = {
    meta: { title: '首页', hide: true },
 };
 
-// const AboutRoute: RouteRecordRaw = {
-//    path: '/bout',
-//    name: 'About',
-//    component: Layout,
-//    meta: {
-//       isRoot: true,
-//       title: 'Root',
-//    },
-//    children: [
-//       {
-//          path: 'index',
-//          name: `about_index`,
-//          meta: {
-//             title: '关于',
-//             // extra: renderNew(),
-//             activeMenu: 'about_index',
-//          },
-//          component: () => import('@/views/about/index.vue'),
-//       },
-//    ],
-// };
+const AboutRoute: RouteRecordRaw = {
+   path: '/about',
+   name: 'about',
+   component: () => import('@/views/about/index.vue'),
+   meta: { title: '关于', hide: true },
+};
+
 
 const routes: Array<RouteRecordRaw> = [
    RootRoute,
-   // AboutRoute,
+   AboutRoute,
 ]
-// const routes = [
-//    { path: '/', component: import('@/views/about/index.vue')},
-//    // { path: '/about', component: About },
-// ]
 
 
 const router = createRouter({

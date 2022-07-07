@@ -1,111 +1,92 @@
 <template>
-
-  <n-menu
-      :options="menuOptions"
-  />
+  <n-menu :indent="24" :options="menuOptions" />
 </template>
 
 <script setup lang="ts">
-import {NIcon} from "naive-ui";
+import { NIcon } from "naive-ui";
 import type { MenuOption } from 'naive-ui'
 import { h, Component } from 'vue'
-// import {
-//   BookOutline as BookIcon,
-//   PersonOutline as PersonIcon,
-//   WineOutline as WineIcon
-// } from '@vicons/ionicons5'
+import { RouterLink } from "vue-router";
+
+import {
+  App as AppIcon,
+  CloudMonitoring as CloudMonitoringIcon,
+} from '@vicons/carbon'
+
+import {
+  ExtensionPuzzleOutline as ExtensionIcon
+} from '@vicons/ionicons5'
 
 
 
-function renderIcon (icon: Component) {
+function renderIcon(icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) })
 }
 
+const routerLinkLabel = (key: string, name: string) =>
+  h(
+    RouterLink,
+    {
+      to: {
+        name: key,
+        params: {
+          lang: 'zh-CN'
+        }
+      }
+    },
+    { default: () => name }
+  )
+const divider: MenuOption = {
+  key: 'divider-1',
+  type: 'divider',
+  props: {
+    style: {
+      marginLeft: '32px'
+    }
+  }
+}
+
+// TODO: icon和title之间距离 调控
 const menuOptions: MenuOption[] = [
   {
-    label: () =>
-        h(
-            'a',
-            {
-              href: 'https://baike.baidu.com/item/%E4%B8%94%E5%90%AC%E9%A3%8E%E5%90%9F',
-              target: '_blank',
-              rel: 'noopenner noreferrer'
-            },
-            '且听风吟'
-        ),
-    key: 'hear-the-wind-sing',
-    // icon: renderIcon(BookIcon)
+    label: routerLinkLabel('app', '应用管理'),
+    title: '应用管理',
+    key: 'app',
+    icon: renderIcon(AppIcon),
   },
+  // 分隔条
+  divider,
   {
-    label: '1973年的弹珠玩具',
-    key: 'pinball-1973',
-    // icon: renderIcon(BookIcon),
-    disabled: true,
-    children: [
-      {
-        label: '鼠',
-        key: 'rat'
-      }
-    ]
+    label: routerLinkLabel('plugin', '插件管理'),
+    title: '插件管理',
+    key: 'plugin',
+    icon: renderIcon(ExtensionIcon),
   },
+  divider,
   {
-    label: '寻羊冒险记',
-    key: 'a-wild-sheep-chase',
-    // icon: renderIcon(BookIcon),
-    disabled: true
+    label: routerLinkLabel('function', '函数管理'),
+    title: '函数管理',
+    key: 'function',
+    icon: renderIcon(CloudMonitoringIcon),
   },
+  divider,
   {
-    label: '舞，舞，舞',
-    key: 'dance-dance-dance',
-    // icon: renderIcon(BookIcon),
-    children: [
-      {
-        type: 'group',
-        label: '人物',
-        key: 'people',
-        children: [
-          {
-            label: '叙事者',
-            key: 'narrator',
-            // icon: renderIcon(PersonIcon)
-          },
-          {
-            label: '羊男',
-            key: 'sheep-man',
-            // icon: renderIcon(PersonIcon)
-          }
-        ]
-      },
-      {
-        label: '饮品',
-        key: 'beverage',
-        // icon: renderIcon(WineIcon),
-        children: [
-          {
-            label: '威士忌',
-            key: 'whisky'
-          }
-        ]
-      },
-      {
-        label: '食物',
-        key: 'food',
-        children: [
-          {
-            label: '三明治',
-            key: 'sandwich'
-          }
-        ]
-      },
-      {
-        label: '过去增多，未来减少',
-        key: 'the-past-increases-the-future-recedes'
-      }
-    ]
-  }
+    label: routerLinkLabel('monitor', '监控'),
+    title: '监控',
+    key: 'monitor',
+    icon: renderIcon(CloudMonitoringIcon),
+  },
+  divider,
+  {
+    label: routerLinkLabel('about', '关于'),
+    title: '关于',
+    key: 'about',
+    icon: renderIcon(CloudMonitoringIcon),
+  },
+  divider,
 ]
+
 </script>
 
 <style scoped>
-
 </style>

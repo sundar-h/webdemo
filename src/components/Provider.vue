@@ -3,6 +3,7 @@
   <!-- 调整主题 -->
   <n-config-provider :locale="lang" :theme="theme" :date-locale="dateLang" :theme-overrides="themeOverrides">
     <!-- 使用对话框 -->
+    <n-global-style />
     <n-dialog-provider>
       <n-message-provider>
         <n-notification-provider>

@@ -1,13 +1,15 @@
 <template>
   <div class="logo">
-    <img src="@/assets/images/logo.png" alt="Sensetime" :class="{ 'mr-2': !collapsed }" />
-<!--    <h2 v-show="!collapsed" class="title">Lambda Dashboard</h2>-->
+    <img class="logo-img" src="@/assets/images/logo.png" alt="Sensetime Lambda" />
+    <!-- <h2 v-show="!collapsed" class="title">Lambda Dashboard</h2> -->
+    <span class="logo-title">{{ projectName }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
 
-defineProps({collapsed: Boolean})
+defineProps({ collapsed: Boolean })
+const projectName = "Lambda"
 </script>
 
 <style lang="less" scoped>
@@ -20,14 +22,14 @@ defineProps({collapsed: Boolean})
   overflow: hidden;
   white-space: nowrap;
 
-img {
-  width: auto;
-  height: 32px;
-}
+  .logo-img {
+    height: 64px;
+  }
 
-.title {
-  margin-bottom: 0;
-}
+  .logo-title {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 
 }
 </style>

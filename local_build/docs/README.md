@@ -28,6 +28,18 @@ yarn add unplugin-vue-components
 # 安装`pnpm`
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
+```bash
+npm i -D @vicons/fluent
+npm i -D @vicons/ionicons4
+npm i -D @vicons/ionicons5
+npm i -D @vicons/antd
+npm i -D @vicons/material
+npm i -D @vicons/fa # font awesome
+npm i -D @vicons/tabler
+npm i -D @vicons/carbon
+npm i -D @vicons/utils  # vue3
+```
+
 
 日志组件:
 1. vite 的vite-error-overlay
